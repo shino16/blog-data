@@ -1,6 +1,6 @@
 baseURL = "https://shino16.github.io/blog/"
 languageCode = "ja-jp"
-title = "しのの備忘録"
+title = "しののブログ"
 theme = "pickles"
 
 # Copyright notice. This is displayer in the footer.

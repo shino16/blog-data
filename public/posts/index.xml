@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on しのの備忘録</title>
+    <title>Posts on しののブログ</title>
     <link>https://shino16.github.io/blog/posts/</link>
-    <description>Recent content in Posts on しのの備忘録</description>
+    <description>Recent content in Posts on しののブログ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>&amp;copy; shino16 &lt;br /&gt; コード片はCC0で配布します。ご自由にお使いください。</copyright>
-    <lastBuildDate>Mon, 19 Oct 2020 02:00:00 +0900</lastBuildDate><atom:link href="https://shino16.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Oct 2020 14:25:20 +0900</lastBuildDate><atom:link href="https://shino16.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vanlint Wilson 19</title>
+      <link>https://shino16.github.io/blog/posts/math/vanlint-wilson-19/</link>
+      <pubDate>Fri, 30 Oct 2020 14:25:20 +0900</pubDate>
+      
+      <guid>https://shino16.github.io/blog/posts/math/vanlint-wilson-19/</guid>
+      <description>例19.10 定理19.11 を使ってみましょう
+ オーダー $n = 6$ の射影平面（$\lambda=1$ の symmetric design）  ※ $n=2,3,4,5,7,8,9$ の場合は $F_n$ を使って $PG_2(n)$ が構成できる</description>
+    </item>
+    
     <item>
       <title>データ構造に乗せる代数的構造の持ち方</title>
       <link>https://shino16.github.io/blog/posts/algo/%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%AB%E4%B9%97%E3%81%9B%E3%82%8B%E4%BB%A3%E6%95%B0%E7%9A%84%E6%A7%8B%E9%80%A0%E3%81%AE%E6%8C%81%E3%81%A1%E6%96%B9/</link>

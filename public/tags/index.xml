@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on しのの備忘録</title>
+    <title>Tags on しののブログ</title>
     <link>https://shino16.github.io/blog/tags/</link>
-    <description>Recent content in Tags on しのの備忘録</description>
+    <description>Recent content in Tags on しののブログ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>&amp;copy; shino16 &lt;br /&gt; コード片はCC0で配布します。ご自由にお使いください。</copyright>
-    <lastBuildDate>Mon, 19 Oct 2020 02:00:00 +0900</lastBuildDate><atom:link href="https://shino16.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Oct 2020 14:25:20 +0900</lastBuildDate><atom:link href="https://shino16.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数学</title>
+      <link>https://shino16.github.io/blog/tags/%E6%95%B0%E5%AD%A6/</link>
+      <pubDate>Fri, 30 Oct 2020 14:25:20 +0900</pubDate>
+      
+      <guid>https://shino16.github.io/blog/tags/%E6%95%B0%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>アルゴリズム</title>
       <link>https://shino16.github.io/blog/tags/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/</link>
@@ -41,15 +50,6 @@
       <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://shino16.github.io/blog/tags/twitter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>数学</title>
-      <link>https://shino16.github.io/blog/tags/%E6%95%B0%E5%AD%A6/</link>
-      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://shino16.github.io/blog/tags/%E6%95%B0%E5%AD%A6/</guid>
       <description></description>
     </item>
     
