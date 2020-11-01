@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
 body {
     color: #333;
-    font-family: -apple-system, BlinkMacSystemFont, YakuHanJP, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    font-family: -apple-system, "Noto Sans JP", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .c-title, .p-subtitle, .p-related__item a {
+    font-family: "Noto Sans JP", sans-serif;
 }
 
 .c-article__title a {
@@ -19,9 +24,6 @@ body {
     padding-left: 10px;
     font-weight: bolder;
     font-size: 2.2rem;
-    /* font-feature-settings: "palt"; */
-    /* padding-bottom: 0.25em; */
-    /* color: #555; */
     border-bottom-color: #333;
     border-bottom-style: solid;
     border-bottom-width: 1.5px;
@@ -30,12 +32,14 @@ body {
 }
 
 .p-article h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bolder;
+    margin-top: 4rem;
 }
 
 .p-article h4 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
+    font-weight: bolder;
 }
 
 .p-title {
