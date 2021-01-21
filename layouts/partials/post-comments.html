@@ -1,11 +1,11 @@
 <section class="post-comments">
-  <h3>Comments</h3>
+  <h3>コメント</h3>
 
   {{ $comments := .Site.Data.comments }}
   {{ $.Scratch.Add "hasComments" 0 }}
 
   {{ range $comments }}
-    {{ if in .path $.File.Path }}
+    {{ if eq .path (replaceRE "\\\\" "/" $.File.Path) }}
       {{ $.Scratch.Add "hasComments" 1 }}
       <div class="post-comment">
         <div class="post-comment-header">
@@ -18,24 +18,20 @@
     {{ end }}
   {{ end }}
 
-  {{ if eq ($.Scratch.Get "hasComments") 0 }}
-    <p>Nothing yet.</p>
-  {{ end }}
-
-  <h3>Say something</h3>
+  <h3>コメントを投稿</h3>
 
   <form class="post-new-comment" method="POST" action="https://staticman16.herokuapp.com/v2/entry/shino16/blog-data/main/comments">
   <!--form class="post-new-comment" method="POST" action="http://localhost:8055/v2/entry/eduardoboucas/staticman-test/master/comments"-->
     <input type="hidden" name="options[redirect]" value="{{ .Permalink }}#comment-submitted">
     <input name="fields[path]" type="hidden" value="{{ .File.Path }}">
-    <input name="fields[name]" type="text" class="post-comment-field" placeholder="Your name">
-    <textarea name="fields[body]" class="post-comment-field" placeholder="Your message. Feel free to use Markdown." rows="10"></textarea>
-    <input type="submit" class="post-comment-field btn" value="Submit">
+    <input name="fields[name]" type="text" class="post-comment-field" placeholder="名前">
+    <textarea name="fields[body]" class="post-comment-field" placeholder="コメント（Markdown有効）" rows="10"></textarea>
+    <input type="submit" class="post-comment-field btn" value="送信">
   </form>
 </section>
 
 <div id="comment-submitted" class="dialog">
-<h3>Thank you</h3>
-  <p>Your comment has been submitted.</p>
+<h3>送信完了</h3>
+  <p>反映まで数分かかることがあります。</p>
   <p><a href="#" class="btn">OK</a></p>
 </div>
