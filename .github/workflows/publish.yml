@@ -15,6 +15,7 @@ jobs:
           git config --global user.name "shino16-sub"
           git config --global user.email "masato.sinokawa@gmail.com"
           cd public
+          cat ./index.html
           git init
           git add .
           git commit -m "Automated commit"
