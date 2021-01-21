@@ -1,0 +1,23 @@
+name: publish
+on: ["push"]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Install Brew
+        run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      - name: Install Hugo
+        run: brew install hugo
+      - name: Build pages
+        run: hugo
+      - name: Publish
+        run: |
+          git config --global user.name "masato.sinokawa@gmail.com"
+          git config --global user.email "shino16-sub"
+          cd public
+          git init
+          git add .
+          git commit -m "Automated commit"
+          git push "https://shino16-sub:$BLOG_TOKEN@github.com/shino16/blog.git" master --force
