@@ -4,11 +4,9 @@ comments:
   generatedFields:
     date:
       type: date
-      options:
-        format: "iso8601"
   format: "json"
   moderation: false
   name: "shino16.github.io"
   path: "data/comments/"
-  filename: "{fields.date}_{@id}"
+  filename: "{@id}"
   requiredFields: ["name", "body"]
