@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on shino16&#39;s blog</title>
+    <link>http://localhost:1313/blog/post/</link>
+    <description>Recent content in Posts on shino16&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 03 Nov 2020 23:45:00 +0900</lastBuildDate><atom:link href="http://localhost:1313/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Montgomery 乗算を実装</title>
+      <link>http://localhost:1313/blog/post/algo/montgomery%E4%B9%97%E7%AE%97%E3%82%92%E5%AE%9F%E8%A3%85/</link>
+      <pubDate>Tue, 03 Nov 2020 23:45:00 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/post/algo/montgomery%E4%B9%97%E7%AE%97%E3%82%92%E5%AE%9F%E8%A3%85/</guid>
+      <description>modulo 演算の高速化です。 これらのうち、Montgomery 乗算というものを実装しました。 余談？ 経緯？ Codeforces では C++ 以外 32bit 環境なんだよなとふと思って、演</description>
+    </item>
+    
+    <item>
+      <title>Vanlint Wilson 19</title>
+      <link>http://localhost:1313/blog/post/math/vanlint-wilson-19/</link>
+      <pubDate>Fri, 30 Oct 2020 14:25:20 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/post/math/vanlint-wilson-19/</guid>
+      <description>※※ 注意 誤植が大量に含まれている可能性があります ※※ 復習 デザイン $t$-$(v,k,\lambda)$、$S_\lambda(t,k,v)$</description>
+    </item>
+    
+    <item>
+      <title>Vanlint Wilson 20</title>
+      <link>http://localhost:1313/blog/post/math/vanlint-wilson-20/</link>
+      <pubDate>Fri, 30 Oct 2020 14:25:20 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/post/math/vanlint-wilson-20/</guid>
+      <description>※※ 注意 誤植が大量に含まれている可能性があります ※※ この章のモチベーション：原文に冗長性を持たせて、一部のデータが書き換わってしまったときに</description>
+    </item>
+    
+    <item>
+      <title>データ構造に乗せる代数的構造の持ち方</title>
+      <link>http://localhost:1313/blog/post/algo/%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%AB%E4%B9%97%E3%81%9B%E3%82%8B%E4%BB%A3%E6%95%B0%E7%9A%84%E6%A7%8B%E9%80%A0%E3%81%AE%E6%8C%81%E3%81%A1%E6%96%B9/</link>
+      <pubDate>Mon, 19 Oct 2020 02:00:00 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/post/algo/%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%AB%E4%B9%97%E3%81%9B%E3%82%8B%E4%BB%A3%E6%95%B0%E7%9A%84%E6%A7%8B%E9%80%A0%E3%81%AE%E6%8C%81%E3%81%A1%E6%96%B9/</guid>
+      <description>代数的構造を乗せるデータ構造の設計について - noshi91のメモ 上の記事で D として書かれているものを、利用者側が構造体を書かなくてもよいよう</description>
+    </item>
+    
+    <item>
+      <title>IOライブラリの設計</title>
+      <link>http://localhost:1313/blog/post/algo/io%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E8%A8%AD%E8%A8%88/</link>
+      <pubDate>Sun, 18 Oct 2020 00:00:00 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/post/algo/io%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E8%A8%AD%E8%A8%88/</guid>
+      <description>競プロ用の入出力ライブラリ（Rust）を作る 要件 長年抱えてる葛藤が、貼る用のライブラリをゴテゴテに作りこむか、簡潔にとどめたほうが綺麗かとい</description>
+    </item>
+    
+    <item>
+      <title>オートマトン（DFA）での桁DPを理解する</title>
+      <link>http://localhost:1313/blog/post/algo/%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3/</link>
+      <pubDate>Fri, 02 Oct 2020 00:00:00 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/post/algo/%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3/</guid>
+      <description>まとめ 文字列の識別を DFA として表現することで、複数の条件や状態遷移を分けて記述し、これらの組み合わせで桁DPを構成するフレームワークが出来まし</description>
+    </item>
+    
+    <item>
+      <title>期待値とダブルカウント・鳩ノ巣原理の関係</title>
+      <link>http://localhost:1313/blog/post/math/%E6%9C%9F%E5%BE%85%E5%80%A4%E3%81%A8%E3%83%80%E3%83%96%E3%83%AB%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E9%B3%A9%E3%83%8E%E5%B7%A3%E5%8E%9F%E7%90%86%E3%81%AE%E9%96%A2%E4%BF%82/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/blog/post/math/%E6%9C%9F%E5%BE%85%E5%80%A4%E3%81%A8%E3%83%80%E3%83%96%E3%83%AB%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E9%B3%A9%E3%83%8E%E5%B7%A3%E5%8E%9F%E7%90%86%E3%81%AE%E9%96%A2%E4%BF%82/</guid>
+      <description>深夜の算数クイズ 4 pic.twitter.com/nXIjPTlmoo &amp;mdash; きり (@kiri8128) September 28, 2020 この問題をきっかけに期待値を利用した証明法についていくつか復習し、役割や鳩ノ巣原理との関係などを考えました</description>
+    </item>
+    
+  </channel>
+</rss>

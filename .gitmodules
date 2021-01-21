@@ -1,3 +1,6 @@
 [submodule "hugo_theme_pickles"]
 	path = hugo_theme_pickles
 	url = https://github.com/mismith0227/hugo_theme_pickles
+[submodule "themes/hugo-future-imperfect-slim"]
+	path = themes/hugo-future-imperfect-slim
+	url = https://github.com/pacollins/hugo-future-imperfect-slim.git

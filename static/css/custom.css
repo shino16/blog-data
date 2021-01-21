@@ -1,64 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+.highlighttable td,th{padding:0;border:0;}td.code{width:95%;}
 
-body {
-    color: #333;
-    font-family: -apple-system, "Noto Sans JP", sans-serif;
+.post-comments {
+  margin-top: 60px;
 }
 
-h1, h2, h3, h4, h5, h6, .c-title, .p-subtitle, .p-related__item a {
-    font-family: "Noto Sans JP", sans-serif;
+.post-comment {
+  background-color: #eee;
+  padding: 20px;
+  margin-top: 20px;
 }
 
-.c-article__title a {
-    color: #333;
+.post-comment-header {
+  margin-bottom: 20px;
 }
 
-.c-article__summary {
-    color: #666;
+.post-comment-avatar {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
 }
 
-.p-article h2 {
-    display: inline-block;
-    padding-right: 10px;
-    padding-left: 10px;
-    font-weight: bolder;
-    font-size: 2.2rem;
-    border-bottom-color: #333;
-    border-bottom-style: solid;
-    border-bottom-width: 1.5px;
-    margin-top: 1.8rem;
-    margin-bottom: 1.5rem;
+.post-comment-info {
+  display: inline-block;
+  margin-left: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
 }
 
-.p-article h3 {
-    font-size: 2rem;
-    font-weight: bolder;
-    margin-top: 4rem;
+.post-comment-field {
+  display: block;
+  font: inherit;
+  padding: 10px;
+  margin-top: 20px;
+  outline-color: #F76C5E;
+  width: 100%;
 }
 
-.p-article h4 {
-    font-size: 1.7rem;
-    font-weight: bolder;
+.btn {
+  border: 2px solid #F76C5E;
+  background-color: #F76C5E;
+  color: white;
+  display: inline-block;
+  font: inherit;
+  padding: 20px;
+  min-width: 100px;
+  -webkit-appearance: none;
 }
 
-.p-title {
-    font-size: 3rem;
+.btn:hover {
+  border: 2px solid #F76C5E !important;
+  background-color: white;
+  color: #F76C5E;
+  text-decoration: none;
 }
 
-.p-subtitle {
-    margin-top: 6px;
+.dialog {
+  display: none;
+  position: fixed;
+  background-color: rgba(238, 238, 238, 1);
+  padding: 25px;
+  padding-top: 20%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
-.p-menu__lists {
-    margin-top: -4em;
-    justify-content: center;
-    border-bottom-style: solid;
-    border-bottom-color: #e6e6e6;
-    border-bottom-width: 1px;
-    padding-bottom: 3px;
-}
-
-code {
-    font-family: 'Source Code Pro', monospace;
+.dialog:target {
+  display: block;
 }

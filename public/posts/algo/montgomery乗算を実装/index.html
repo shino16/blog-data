@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Montgomery 乗算を実装 - ブログ</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="shino6" /><meta name="description" content="modulo 演算の高速化です。 これらのうち、Montgomery 乗算というものを実装しました。 余談？ 経緯？ Codeforces では C&#43;&#43; 以外 32bit 環境なんだよなとふと思って、演" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/blog/posts/algo/montgomery%E4%B9%97%E7%AE%97%E3%82%92%E5%AE%9F%E8%A3%85/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="manifest" href="/blog/manifest.json">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/blog/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
+<link href="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="Montgomery 乗算を実装" />
+<meta property="og:description" content="modulo 演算の高速化です。 これらのうち、Montgomery 乗算というものを実装しました。 余談？ 経緯？ Codeforces では C&#43;&#43; 以外 32bit 環境なんだよなとふと思って、演" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/blog/posts/algo/montgomery%E4%B9%97%E7%AE%97%E3%82%92%E5%AE%9F%E8%A3%85/" />
+<meta property="article:published_time" content="2020-11-03T23:45:00+09:00" />
+<meta property="article:modified_time" content="2020-11-03T23:45:00+09:00" />
+<meta itemprop="name" content="Montgomery 乗算を実装">
+<meta itemprop="description" content="modulo 演算の高速化です。 これらのうち、Montgomery 乗算というものを実装しました。 余談？ 経緯？ Codeforces では C&#43;&#43; 以外 32bit 環境なんだよなとふと思って、演">
+<meta itemprop="datePublished" content="2020-11-03T23:45:00+09:00" />
+<meta itemprop="dateModified" content="2020-11-03T23:45:00+09:00" />
+<meta itemprop="wordCount" content="856">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Montgomery 乗算を実装"/>
+<meta name="twitter:description" content="modulo 演算の高速化です。 これらのうち、Montgomery 乗算というものを実装しました。 余談？ 経緯？ Codeforces では C&#43;&#43; 以外 32bit 環境なんだよなとふと思って、演"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/" class="logo">ブログ</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/blog/" class="logo">ブログ</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/blog/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>modulo 演算の高速化です。</p>
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fmin-25.hatenablog.com%2Fentry%2F2017%2F08%2F20%2F171214" style="border: 0; width: 100%; height: 190px;" allowfullscreen scrolling="no"></iframe>
+<p>これらのうち、Montgomery 乗算というものを実装しました。</p>
+<h2 id="余談経緯">余談？　経緯？</h2>
+<p>Codeforces では C++ 以外 32bit 環境なんだよなとふと思って、演算にどれだけの差が出るのか調べてみました。</p>
+<p>どうやら 32bit 環境での 64bit 整数同士の乗算・除算は特に遅いらしい。</p>
+<blockquote>
+<p><img src="https://www.passmark.com/images/forumimages/64bit_vs_32bit_benchmark_V7.png" alt="画像"></p>
+<p>引用：<a href="https://forums.passmark.com/performancetest/3383-64bit-vs-32bit-benchmarks-integer-maths-pt8#post3383">https://forums.passmark.com/performancetest/3383-64bit-vs-32bit-benchmarks-integer-maths-pt8#post3383</a></p>
+</blockquote>
+<h2 id="montgomery-乗算とは">Montgomery 乗算とは</h2>
+<p>中国剰余定理の応用みたいなもので、例えば奇数 $M$ に対して、$\bmod M$ の演算を「<code>% M</code>」の代わりに $2$ の冪による除算・剰余算（bit 演算）で済ませることができます。$M &lt; 2^{31} = 2147483648$ なら 32bit 整数でうまい感じにできます。</p>
+<p>こちらを参考にしました。これらが完璧すぎるので自分は書くことがありません。</p>
+<p><a href="https://yukicoder.me/wiki/%E3%83%A2%E3%83%B3%E3%82%B4%E3%83%A1%E3%83%AA%E4%B9%97%E7%AE%97">モンゴメリ乗算 Wiki - yukicoder</a></p>
+<p><a href="https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%B3%E3%82%B4%E3%83%A1%E3%83%AA%E4%B9%97%E7%AE%97">モンゴメリ乗算 - Wikipedia</a></p>
+<p>というか「modulo 演算の速度差が問題になるようなコンテストに出ない！(素振り)」案件なんですよね。AtCoder や Library Checker では有意な差すら確認できていないのですが（ベンチマークになる問題があれば教えてください）、Codeforces で NTT を投げてみたらこんなことがあり</p>
+<p><a href="https://codeforces.com/contest/954/submission/97560132">Submission #97560132 - Codeforces</a> TLE (&gt;4000 ms)</p>
+<p><a href="https://codeforces.com/contest/954/submission/97563421">Submission #97563421 - Codeforces</a> AC (2262 ms)</p>
+<p><code>main</code> 関数の中身は同じです。さすがにおかしくないか？ 32bit だと $2^{30}$ 程度の定数による除算・剰余算があまり最適化されなかったりするんでしょうか。</p>
+<h2 id="実装">実装</h2>
+<p>yukicoder Wiki、Wikipedia の内容をそのまま実装します。法は奇数であればよいですが、素数と仮定することにします。</p>
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://github.com/shino16/cpr/blob/master/src/fp.rs" data-iframely-url="//cdn.iframe.ly/ZfhHqXV"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+<p>せっかくこういうことをするのに ACL の <code>dynamic_modint</code> みたいなのを提供しないのはもったいない気がするんですが、<code>Mod</code> の値を <code>const</code> にしたいので切りました。助けてください</p>
+<p><del>乗算直後の $R$ が $1$ つ余分に掛けられているものは <code>FpGrow</code>（まともな名前がほしい）という型で表現しています。こちらは <code>val</code> の型が <code>u64</code> で、「<code>Fp</code> の積を足しこんでいってまとめて <code>reduce</code>」みたいな使い方ができるかもしれません。</del> クビにしました</p>
+<p>本当に書くことがない</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="http://twitter.com/shino_personal" class="iconfont icon-twitter" title="twitter"></a>
+  <a href="http://localhost:1313/blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>shino6</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/blog/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blog/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+
+<script type="text/javascript" src="/blog/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
