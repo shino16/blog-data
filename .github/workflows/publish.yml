@@ -11,16 +11,22 @@ jobs:
           submodules: recursive
       - name: Install Hugo
         run: sudo snap install hugo --channel=extended
+      - name: Setup target directory
+        run: |
+          git config --global user.name "shino16-sub"
+          git config --global user.email "masato.sinokawa@gmail.com"
+          mkdir public
+          cd public
+          git init
+          git remote add origin https://shino16:${{ secrets.GH_PAT }}@github.com/shino16/blog.git
+          git pull origin master
+          rm -rd *
+          cd ..
       - name: Build pages
         run: hugo
       - name: Publish
         run: |
-          git config --global user.name "shino16-sub"
-          git config --global user.email "masato.sinokawa@gmail.com"
           cd public
-          cat ./index.html
-          git init
           git add .
           git commit -m "Automated commit"
-          git remote add origin https://shino16:${{ secrets.GH_PAT }}@github.com/shino16/blog.git
-          git push origin HEAD:master --force
+          git push origin HEAD:master
