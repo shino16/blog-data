@@ -26,7 +26,7 @@
 
   <h3>Say something</h3>
 
-  <form class="post-new-comment" method="POST" action="https://staticman16.herokuapp.com/v2/entry/shino16/blog/master/comments">
+  <form class="post-new-comment" method="POST" action="https://staticman16.herokuapp.com/v2/entry/shino16/blog-data/main/comments">
   <!--form class="post-new-comment" method="POST" action="http://localhost:8055/v2/entry/eduardoboucas/staticman-test/master/comments"-->
     <input type="hidden" name="options[redirect]" value="{{ .Permalink }}#comment-submitted">
     <input type="hidden" name="options[entryId]" value="{{ .UniqueID }}">
@@ -38,8 +38,6 @@
 
 <div id="comment-submitted" class="dialog">
 <h3>Thank you</h3>
-  <p>Your comment has been submitted and will be published once it has been approved.</p>
-  <p><a href="https://github.com/shino16/blog/pulls">Click here</a> to see the pull request you generated.</p>
-  
+  <p>Your comment has been submitted.</p>
   <p><a href="#" class="btn">OK</a></p>
 </div>

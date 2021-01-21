@@ -1,6 +1,6 @@
 comments:
   allowedFields: ["name", "body"]
-  branch: "master"
+  branch: "main"
   generatedFields:
     date:
       type: date
