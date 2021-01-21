@@ -14,8 +14,8 @@ jobs:
         run: hugo
       - name: Publish
         run: |
-          git config --global user.name "masato.sinokawa@gmail.com"
-          git config --global user.email "shino16-sub"
+          git config --global user.name "shino16-sub"
+          git config --global user.email "masato.sinokawa@gmail.com"
           cd public
           git init
           git add .
