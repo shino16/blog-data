@@ -22,4 +22,4 @@ jobs:
           git init
           git add .
           git commit -m "Automated commit"
-          git push "https://$GITHUB_ACTOR:$PERSONAL_TOKEN@github.com/shino16/blog.git" master --force
+          git push "https://$PERSONAL_TOKEN@github.com/shino16/blog.git" master --force
