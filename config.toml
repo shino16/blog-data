@@ -1,4 +1,5 @@
 staticman_api = "https://staticman16.herokuapp.com/v2/entry/shino16/blog-data/main/comments"
+disableKinds = "RSS"
 
 baseURL = "http://shino16.github.io/blog/"
 languageCode = "ja"

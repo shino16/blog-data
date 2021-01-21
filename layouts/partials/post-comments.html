@@ -29,7 +29,7 @@
   <form class="post-new-comment" method="POST" action="https://staticman16.herokuapp.com/v2/entry/shino16/blog-data/main/comments">
   <!--form class="post-new-comment" method="POST" action="http://localhost:8055/v2/entry/eduardoboucas/staticman-test/master/comments"-->
     <input type="hidden" name="options[redirect]" value="{{ .Permalink }}#comment-submitted">
-    <input type="hidden" name="options[entryId]" value="{{ .UniqueID }}">
+    <input type="hidden" name="options[entryId]" value="{{ .File.UniqueID }}">
     <input name="fields[name]" type="text" class="post-comment-field" placeholder="Your name">
     <textarea name="fields[body]" class="post-comment-field" placeholder="Your message. Feel free to use Markdown." rows="10"></textarea>
     <input type="submit" class="post-comment-field btn" value="Submit">
