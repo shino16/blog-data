@@ -6,10 +6,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Install Brew
-        run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       - name: Install Hugo
-        run: brew install hugo
+        run: snap install hugo --channel=extended
       - name: Build pages
         run: hugo
       - name: Publish
