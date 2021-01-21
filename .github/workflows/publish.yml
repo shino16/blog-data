@@ -7,7 +7,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Install Hugo
-        run: snap install hugo --channel=extended
+        run: sudo snap install hugo --channel=extended
       - name: Build pages
         run: hugo
       - name: Publish
