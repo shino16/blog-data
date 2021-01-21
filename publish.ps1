@@ -1,5 +1,6 @@
 hugo
 Set-Location .\public
-git commit -am "."
+git add .
+git commit -m "."
 git push origin master
 Set-Location ..
