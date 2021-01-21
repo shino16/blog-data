@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on shino16&#39;s blog</title>
+    <link>http://localhost:1313/blog/tags/</link>
+    <description>Recent content in Tags on shino16&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 30 Oct 2020 14:25:20 +0900</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数学</title>
+      <link>http://localhost:1313/blog/tags/%E6%95%B0%E5%AD%A6/</link>
+      <pubDate>Fri, 30 Oct 2020 14:25:20 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/tags/%E6%95%B0%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>アルゴリズム</title>
+      <link>http://localhost:1313/blog/tags/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/</link>
+      <pubDate>Mon, 19 Oct 2020 02:00:00 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/tags/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>実装</title>
+      <link>http://localhost:1313/blog/tags/%E5%AE%9F%E8%A3%85/</link>
+      <pubDate>Mon, 19 Oct 2020 02:00:00 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/tags/%E5%AE%9F%E8%A3%85/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>文字列</title>
+      <link>http://localhost:1313/blog/tags/%E6%96%87%E5%AD%97%E5%88%97/</link>
+      <pubDate>Fri, 02 Oct 2020 00:00:00 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/tags/%E6%96%87%E5%AD%97%E5%88%97/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Twitter</title>
+      <link>http://localhost:1313/blog/tags/twitter/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/blog/tags/twitter/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
