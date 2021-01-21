@@ -5,7 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_PAT }}
+          submodules: recursive
       - name: Install Hugo
         run: sudo snap install hugo --channel=extended
       - name: Build pages
