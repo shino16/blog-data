@@ -1,5 +1,5 @@
 comments:
-  allowedFields: ["name", "body"]
+  allowedFields: ["path", "name", "body"]
   branch: "main"
   generatedFields:
     date:
@@ -9,4 +9,4 @@ comments:
   name: "shino16.github.io"
   path: "data/comments/"
   filename: "{@id}"
-  requiredFields: ["name", "body"]
+  requiredFields: ["path", "name", "body"]

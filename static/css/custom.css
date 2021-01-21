@@ -30,7 +30,7 @@
 .post-comment-field {
   display: block;
   font: inherit;
-  padding: 10px;
+  padding: 10px 0px;
   margin-top: 20px;
   outline-color: #F76C5E;
   width: 100%;
