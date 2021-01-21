@@ -22,5 +22,5 @@ jobs:
           git init
           git add .
           git commit -m "Automated commit"
-          git remote add origin "https://shino16:$PERSONAL_TOKEN@github.com/shino16/blog.git"
+          git remote add origin "https://shino16:$GH_PAT@github.com/shino16/blog.git"
           git push origin HEAD:master --force
