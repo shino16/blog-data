@@ -28,5 +28,5 @@ jobs:
         run: |
           cd public
           git add .
-          git commit -m "Automated commit"
+          git commit --allow-empty -m "Automated commit"
           git push origin HEAD:master
