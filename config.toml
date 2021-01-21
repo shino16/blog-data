@@ -1,4 +1,4 @@
-staticman_api = "https://staticman16.herokuapp.com/v2/entry/shino16/blog/master/comments"
+staticman_api = "https://staticman16.herokuapp.com/v2/entry/shino16/blog-data/main/comments"
 
 baseURL = "http://localhost:1313/blog/"
 languageCode = "ja"
