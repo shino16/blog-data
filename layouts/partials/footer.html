@@ -1,10 +1,9 @@
 <div class="social-links">
   {{- range $name, $path := .Site.Params.social }}
-  {{- if $path }}
-  {{- $realName := slicestr $name 2 }}
-  <a href="{{ $path | safeURL }}" id="footer-{{ $realName }}" class="iconfont icon-{{ $realName }}"
-    title="{{ $realName }}"></a>
-  {{- end }}
+    {{- if $path }}
+      {{- $realName := slicestr $name 2 }}
+      <a href="{{ $path | safeURL }}" id="footer-{{ $realName }}" class="iconfont icon-{{ $realName }}" title="{{ $realName }}"></a>
+    {{- end }}
   {{- end }}
 </div>
 
@@ -14,7 +13,7 @@
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    {{ T "theme" }} -
+    {{ T "theme" }} - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
@@ -22,29 +21,25 @@
   <div class="busuanzi-footer">
     {{ $spinner := "img/spinner.svg" | relURL -}}
     {{ if and .Site.Params.busuanzi.enable .Site.Params.busuanzi.sitePV -}}
-    {{ $valueSpan := printf `<span id="busuanzi_value_site_pv"><img src="%s" alt="spinner.svg" /></span>` $spinner -}}
-    <span id="busuanzi_container_site_pv"> {{ printf (T "sitePV") $valueSpan | safeHTML }} </span>
-    {{ if .Site.Params.busuanzi.siteUV }}<span class="division">|</span>{{ end }}
+      {{ $valueSpan := printf `<span id="busuanzi_value_site_pv"><img src="%s" alt="spinner.svg"/></span>` $spinner -}}
+      <span id="busuanzi_container_site_pv"> {{ printf (T "sitePV") $valueSpan | safeHTML }} </span>
+      {{ if .Site.Params.busuanzi.siteUV }}<span class="division">|</span>{{ end }}
     {{- end }}
     {{ if and .Site.Params.busuanzi.enable .Site.Params.busuanzi.siteUV -}}
-    {{ $valueSpan := printf `<span id="busuanzi_value_site_uv"><img src="%s" alt="spinner.svg" /></span>` $spinner -}}
-    <span id="busuanzi_container_site_uv"> {{ printf (T "siteUV") $valueSpan | safeHTML }} </span>
+      {{ $valueSpan := printf `<span id="busuanzi_value_site_uv"><img src="%s" alt="spinner.svg"/></span>` $spinner -}}
+      <span id="busuanzi_container_site_uv"> {{ printf (T "siteUV") $valueSpan | safeHTML }} </span>
     {{- end }}
   </div>
   {{- end }}
 
   <span class="copyright-year">
     {{- $current := now.Format "2006" }}
-    &copy;
-    &copy;
-    &copy;
+    &copy; 
     {{ if ne .Site.Params.since $current -}}
-    {{ .Site.Params.since }} -
+      {{ .Site.Params.since }} - 
     {{ end }}
     {{- $current -}}
-    <span class="heart"><i class="iconfont icon-heart"></i></span>
-    <!--
-    --><span>{{if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}{{ end
-      }}</span>
+    <span class="heart"><i class="iconfont icon-pencil"></i></span><!--
+    --><span>{{if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}{{ end }}</span>
   </span>
 </div>
