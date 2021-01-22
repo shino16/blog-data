@@ -1,4 +1,6 @@
-.highlighttable td,th{padding:0;border:0;}td.code{width:95%;}
+.header .logo-wrapper .logo {
+  font-family: cursive, sans-serif;
+}
 
 .post-comments {
   margin-top: 60px;
