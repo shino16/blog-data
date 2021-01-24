@@ -1,6 +1,7 @@
 ---
 title: About
 hideDate: true
+draft: true
 ---
 
 本や記事、Twitterで見聞きしたことや調べたこと等を書き溜めていきます。
