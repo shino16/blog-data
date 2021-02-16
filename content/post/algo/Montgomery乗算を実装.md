@@ -1,5 +1,5 @@
 ---
-title: "Montgomery 乗算を実装"
+title: "Montgomery 乗算を実装した"
 date: 2020-11-03T23:45:00+0900
 tag:
 - アルゴリズム
@@ -45,8 +45,4 @@ yukicoder Wiki、Wikipedia の内容をそのまま実装します。法は奇�
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://github.com/shino16/cpr/blob/master/src/fp.rs" data-iframely-url="//cdn.iframe.ly/ZfhHqXV"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 
-せっかくこういうことをするのに ACL の `dynamic_modint` みたいなのを提供しないのはもったいない気がするんですが、`Mod` の値を `const` にしたいので切りました。助けてください
-
-~~乗算直後の $R$ が $1$ つ余分に掛けられているものは `FpGrow`（まともな名前がほしい）という型で表現しています。こちらは `val` の型が `u64` で、「`Fp` の積を足しこんでいってまとめて `reduce`」みたいな使い方ができるかもしれません。~~ クビにしました
-
-本当に書くことがない
+せっかくこういうことをするのに ACL の `dynamic_modint` みたいなのを提供しないのはもったいないんですが、`Mod` の値を `const` にしたいので切りました。
