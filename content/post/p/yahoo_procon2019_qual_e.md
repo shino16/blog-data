@@ -8,6 +8,7 @@ tags:
 - "数学"
 - "線型代数"
 - "数え上げ"
+- "橙"
 ---
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://atcoder.jp/contests/yahoo-procon2019-qual/tasks/yahoo_procon2019_qual_e" data-iframely-url="//cdn.iframe.ly/LkBzFTY"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
