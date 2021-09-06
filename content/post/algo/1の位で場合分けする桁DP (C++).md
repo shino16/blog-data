@@ -175,28 +175,28 @@ bitset<64> l, r;
 // y_r: y <= r か y < r か
 // y_2x: y <= 2x か y < 2x か
 mint dp[65][2][2][2];
- 
+
 int main() {
   long long li, ri;
   scanf("%lld%lld", &li, &ri);
   l = li, r = ri;
- 
+
   dp[0][1][1][1] = 1;
- 
+
   rep(i, 64) rep(l_x, 2) rep(y_r, 2) {
     mint (&ans)[2] = dp[i + 1][l_x][y_r];
     int xlb = l[63 - i] - l_x, yub = r[63 - i] + y_r;
- 
+
     ans[0] += dp[i][0 > xlb][0 < yub][0];
     ans[1] += dp[i][0 > xlb][0 < yub][1];
- 
+
     ans[0] += dp[i][0 > xlb][1 < yub][0];
     ans[1] += dp[i][0 > xlb][1 < yub][0];
- 
+
     ans[0] += dp[i][1 > xlb][1 < yub][1];
     ans[1] += dp[i][1 > xlb][1 < yub][1];
   }
- 
+
   printf("%d\n", dp[64][1][1][0].val());
 }
 ```
