@@ -82,3 +82,8 @@
   font-size: 1.05em;
   line-height: 1.2em;
 }
+
+::selection {
+  background: initial;
+  color: initial;
+}
