@@ -56,6 +56,10 @@
   text-decoration: none;
 }
 
+.post-comments {
+  display: none;
+}
+
 .dialog {
   display: none;
   position: fixed;
@@ -71,4 +75,10 @@
 
 .dialog:target {
   display: block;
+}
+
+.post .post-content code, .post .post-content pre {
+  background-color: #fefef7;
+  font-size: 1.05em;
+  line-height: 1.2em;
 }
