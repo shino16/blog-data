@@ -1,7 +1,7 @@
 ---
 title: "Vanlint Wilson 20"
 date: 2020-10-30T14:25:20+09:00
-# draft: true
+draft: true
 hidden: true
 ---
 
