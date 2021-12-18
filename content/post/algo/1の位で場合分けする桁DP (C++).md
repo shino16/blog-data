@@ -26,7 +26,7 @@ tag:
 
 このメモ化再帰を C++ でもやってみます．多倍長整数を使って $\lfloor N/10 \rfloor$ や $\lfloor N/10 \rfloor - 1$ をそのまま持ち回す代わりに，制約を「$X \leq (\text{$N$ の上 $i$ 桁})$」「$X < (\text{$N$ の上 $i$ 桁})$」の形で表現しています．
 
-コメント中の `s[..i]` は「入力の上 $i$ 桁」の気持ちです．$X (=10q+r)$ は数え上げる対象です．
+コメント中の `s[..i]` は「入力の上 $i$ 桁」を表します．$X\;(=10q+r)$ は数え上げる対象です．
 
 ```cpp
 char s[101]; // 入力
@@ -34,6 +34,7 @@ int memo[101][2][4];
 
 // X <= s[..i] もしくは X < s[..i] に対する数え上げ
 int f(int i, bool leq, int k) {
+  if (k < 0) return 0;
   int& ret = memo[i][leq][k];
   if (ret != -1) return ret;
 
@@ -47,25 +48,18 @@ int f(int i, bool leq, int k) {
   // q := X / 10, r := X % 10
   // 10 * q + r < 10 * s[..i-1] + ub
 
-  // r < ub のとき q <= s[..i-1]
-  // r >= ub のとき q < s[..i-1]
-
   ret = 0;
-  // r == 0
-  ret += f(i - 1, 0 < ub, k);
-  // 0 < r < ub
-  if (k > 0) ret += f(i - 1, true, k - 1) * max(0, ub - 1);
-  // ub <= r < 10, r > 0
-  if (k > 0) ret += f(i - 1, false, k - 1) * (10 - max(1, ub));
+  rep(r, 10) ret += f(i - 1, r < ub, k - (r != 0));
   return ret;
 }
 ```
 
-要するに，$1$ の位だけ見たときに不等式制約に違反していたら，それより上の桁では strict な不等式が成立することが必要で，違反していなければ strict でなくてよいということです．
+[提出](https://atcoder.jp/contests/abc154/submissions/27972847)
 
-[提出](https://atcoder.jp/contests/abc154/submissions/25648538)
 
-このメモ化再帰を，ループによってそのまま書き換えてみます．
+「$1$ の位だけ見たときに不等式制約を満たしている $\Longleftrightarrow$ それより上の桁では等号付きの不等式が成立すれば十分」と意識すると書きやすいです．
+
+このメモ化再帰を，そのままループに書き換えてみます．
 
 ```cpp
 char s[101];
@@ -79,26 +73,23 @@ int main() {
 
   dp[0][1][0] = 1;
 
-  rep(i, n) rep(leq, 2) rep(k, 4) {
+  rep(i, n) rep(leq, 2) rep(k, 4) rep(r, 10) {
     int ub = s[i] - '0' + leq;
-    int& ans = dp[i + 1][leq][k];
-
-    ans += dp[i][0 < ub][k];
-    if (k > 0) ans += dp[i][1][k - 1] * max(0, ub - 1);
-    if (k > 0) ans += dp[i][0][k - 1] * min(9, 10 - ub);
+    if (k - (r != 0) >= 0)
+      dp[i + 1][leq][k] += dp[i][r < ub][k - (r != 0)];
   }
 
   printf("%d\n", dp[n][1][k]);
 }
 ```
 
-[提出](https://atcoder.jp/contests/abc154/submissions/25648538)
+[提出](https://atcoder.jp/contests/abc154/submissions/27972868)
 
-ただの貰うDPですね．変数 `leq` が桁DPのいわゆる `tight` フラグに対応していそうです．
-
-[opt さんのブログ](https://opt-cp.com/digit-dp-implementation/) にはこの問題を含めた桁DPの，配るDPによる実装のコツが解説されています．興味深い違いだなと思います．
+貰うDPであるという点以外はよくある桁DPの実装と同じ形になったと思います．変数 `leq` は桁DPのいわゆる `tight` フラグと役割が似ています．
 
 ## ABC129-E Sum Equals Xor
+
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://atcoder.jp/contests/abc129/tasks/abc129_e" data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fabc129%2Ftasks%2Fabc129_e&key=db98f8c5577d0512bf5cb79a9237e006"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 
 > $a + b \leq L$ かつ $a + b = a\ \mathrm{XOR}\ b$ なる非負整数の組 $(a, b)$ の個数を求めよ．
 >
@@ -168,10 +159,14 @@ int main() {
 
 ## ABC138-F Coincidence （おまけ）
 
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://atcoder.jp/contests/abc138/tasks/abc138_f" data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fabc138%2Ftasks%2Fabc138_f&key=db98f8c5577d0512bf5cb79a9237e006"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+
+$L \leq x \leq y \leq R$，$y < 2x$，$\operatorname{bits}(x) \subseteq \operatorname{bits}(y)$ なる $x$，$y$ を数える問題です．
+
 ```cpp
 bitset<64> l, r;
 // (i, l_x, y_r, y_2x): (x, y) の数え上げ
-// l_x: 数え上げ対象の条件が l <= x か l < x か
+// l_x: 数え上げ対象の条件が l <= x (1) か l < x (0) か
 // y_r: y <= r か y < r か
 // y_2x: y <= 2x か y < 2x か
 mint dp[65][2][2][2];
@@ -184,17 +179,14 @@ int main() {
   dp[0][1][1][1] = 1;
 
   rep(i, 64) rep(l_x, 2) rep(y_r, 2) {
-    mint (&ans)[2] = dp[i + 1][l_x][y_r];
     int xlb = l[63 - i] - l_x, yub = r[63 - i] + y_r;
 
-    ans[0] += dp[i][0 > xlb][0 < yub][0];
-    ans[1] += dp[i][0 > xlb][0 < yub][1];
-
-    ans[0] += dp[i][0 > xlb][1 < yub][0];
-    ans[1] += dp[i][0 > xlb][1 < yub][0];
-
-    ans[0] += dp[i][1 > xlb][1 < yub][1];
-    ans[1] += dp[i][1 > xlb][1 < yub][1];
+    rep(yi, 2) rep(xi, yi + 1) { // y, x の一の位
+      dp[i + 1][l_x][y_r][0]
+        += dp[i][xi > xlb][yi < yub][yi < xi * 2];
+      dp[i + 1][l_x][y_r][1]
+        += dp[i][xi > xlb][yi < yub][yi <= xi * 2];
+    }
   }
 
   printf("%d\n", dp[64][1][1][0].val());
