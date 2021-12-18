@@ -24,7 +24,7 @@ tag:
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://maspypy.com/atcoder-%e5%8f%82%e5%8a%a0%e6%84%9f%e6%83%b3-2019-02-09abc-154#toc4" data-iframely-url="//cdn.iframe.ly/W296i0g"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 
-このメモ化再帰を C++ でもやってみましょう．多倍長整数を使って $\lfloor N/10 \rfloor$ や $\lfloor N/10 \rfloor - 1$ をそのまま持ち回す代わりに，制約を「$X \leq (\text{$N$ の上 $i$ 桁})$」「$X < (\text{$N$ の上 $i$ 桁})$」の形で表現しています．
+このメモ化再帰を C++ でもやってみます．多倍長整数を使って $\lfloor N/10 \rfloor$ や $\lfloor N/10 \rfloor - 1$ をそのまま持ち回す代わりに，制約を「$X \leq (\text{$N$ の上 $i$ 桁})$」「$X < (\text{$N$ の上 $i$ 桁})$」の形で表現しています．
 
 コメント中の `s[..i]` は「入力の上 $i$ 桁」の気持ちです．$X (=10q+r)$ は数え上げる対象です．
 
@@ -106,7 +106,7 @@ int main() {
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://atcoder.jp/contests/abc129/tasks/abc129_e" data-iframely-url="//cdn.iframe.ly/mYTPwcy"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 
-最初から貰うDPの形で書いてみます．先ほどのコードと大して変わりません（こっちの方が分かりやすかったか）．
+最初から貰うDPの形で書いてみます．
 
 ```cpp
 char s[100002];
