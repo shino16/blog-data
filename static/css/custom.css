@@ -20,17 +20,27 @@ h3 {
   margin-bottom: 36px;
 }
 
-.mobile-navbar .mobile-header-logo .logo,
-.header .logo-wrapper .logo {
-  font-family: cursive, sans-serif;
+::selection {
+  background: Highlight;
+  color: HighlightText;
 }
 
+.mobile-navbar .mobile-header-logo .logo,
+.header .logo-wrapper .logo {
+  font-family: "Comic Sans MS","Comic Sans",cursive,sans-serif;
+}
+
+.header .site-navbar .menu {
+  font-family: Microsoft Yahei,YakuHanJPs,"Segoe UI",Arial,Meiryo,sans-serif;
+}
+
+body,
 .terms,
 .post .post-footer .post-nav .prev, .post .post-footer .post-nav .next,
 .post .post-content .read-more .read-more-link,
 .post .post-footer,
 .post .post-toc {
-  font-family: source sans pro,helvetica neue,Arial,sans-serif;
+  font-family: YakuHanJPs,"Segoe UI",Arial,Meiryo,sans-serif;
 }
 
 .post .post-header .post-title,
@@ -38,7 +48,7 @@ h3 {
 .post .post-content h2,
 .post .post-content h3,
 h1, h2, h3 {
-  font-family: source sans pro,helvetica neue,Arial,sans-serif;
+  font-family: YakuHanJPs,"Segoe UI",Arial,Meiryo,sans-serif;;
   font-weight: bold;
 }
 
