@@ -25,10 +25,10 @@ body {
   }
 }
 
-// ::selection {
-//   background: $theme-color;
-//   color: #fff; 
-// }
+::selection {
+  background: $theme-color;
+  color: #fff; 
+}
 
 // ::-webkit-scrollbar {
 //   width: 8px;

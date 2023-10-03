@@ -1,3 +1,26 @@
+html {
+  font-size: 1.125rem;
+}
+
+.post .post-content .highlight>.chroma .lntd:last-child pre,
+.post .post-content .highlight>.chroma .lntd:first-child pre {
+  padding-top: 10px;
+}
+
+h2 {
+  margin-top: 54px;
+}
+
+h3 {
+  margin-top: 36px;
+}
+
+.post .post-content .highlight>.chroma {
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+.mobile-navbar .mobile-header-logo .logo,
 .header .logo-wrapper .logo {
   font-family: cursive, sans-serif;
 }
