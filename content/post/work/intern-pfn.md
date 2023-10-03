@@ -60,7 +60,7 @@ A = distributed_array(a, {0: slice(5), 1: slice(5, 10)})
 
 `DistributedArray` は `ufunc` に対応しており、`A+B` や `sin(A)` といった要素ごとの演算が行えます。`A.sum(axis=0)` などの reduction や行列積 `A @ B` も、基本的なところをサポートしました。
 
-これに付随して `DistributedArray` 特有の概念がいくつかありますが、特に resharding という機能に苦労しました。業務の雰囲気が分かると思うので、resharding がどのようなものだったか簡単に説明します。
+これに付随して `DistributedArray` 特有の概念がいくつかありますが、特に **resharding** という機能に苦労しました。業務の雰囲気が分かると思うので、これがどのようなものだったか簡単に説明します。
 
 ### Resharding (再振り分け)
 

@@ -19,7 +19,7 @@ jobs:
           cd public
           git init
           git remote add origin https://shino16:${{ secrets.GH_PAT }}@github.com/shino16/blog.git
-          git pull origin master
+          git pull origin main
           rm -rd *
           cd ..
       - name: Build pages
@@ -29,4 +29,4 @@ jobs:
           cd public
           git add .
           git commit --allow-empty -m "Automated commit"
-          git push origin HEAD:master
+          git push origin HEAD:main
