@@ -2,7 +2,7 @@
 title: IOライブラリの設計
 date: 2020-10-18 00:00:00 +0900
 tags:
-- アルゴリズム
+- ライブラリ
 - 実装
 ---
 
@@ -29,7 +29,7 @@ tags:
 
 下のコードを[なんとかかんとか](https://github.com/shino16/cargo-auto-bundle)で pack? bundle? したもの。
 
-```rust
+```rs
 use lib::io::*;
 use lib::ds::fenwick::*;
 

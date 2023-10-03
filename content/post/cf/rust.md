@@ -45,13 +45,13 @@ Another example is error handling. Since Rust does not have exceptions, operatio
 
 Let's say you want to `pop` from a `BinaryHeap` (akin to `std::priority_queue`). In Rust, you may have to write this:
 
-```rust
+```rs
 let value = heap.pop().unwrap();
 ```
 
 Because `pop` returns `Option<T>` (equivalent to `std::optional<T>`), you have to explicit the error (`unwrap` aborts the execution in that case). But they are not that bothersome. Control flow can nicely absorb error handling:
 
-```rust
+```rs
 if let Some(value) = heap.pop() {
     println!("{} is popped out", value);
 } else {
@@ -59,7 +59,7 @@ if let Some(value) = heap.pop() {
 }
 ```
 
-```rust
+```rs
 while let Some(value) = heap.pop() {
     println!("{} is popped out", value);
 }
@@ -69,7 +69,7 @@ Also it's loaded with various combinators imported from functional languages —
 
 <!-- Actually under a certain setting you can do:
 
-```rust
+```rs
 let value = vec.pop()?;
 ```
 

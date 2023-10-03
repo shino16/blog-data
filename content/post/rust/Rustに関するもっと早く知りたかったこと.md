@@ -6,7 +6,7 @@ draft: true
 
 ## クロージャの再帰
 
-```rust
+```rs
 struct Recurse<F>(F);
 impl<F> Recurse<F> {
     fn call<Arg, Ret>(&self, arg: Arg) -> Ret
