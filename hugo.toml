@@ -1,7 +1,4 @@
-staticman_api = "https://staticman16.herokuapp.com/v2/entry/shino16/blog-data/main/comments"
-disableKinds = "RSS"
-
-baseURL = "http://shino16.github.io/blog/"
+baseURL = "https://shino16.github.io/blog/"
 languageCode = "ja"
 defaultContentLanguage = "ja"                             # en / zh-cn / ... (This field determines which i18n file to use)
 title = "shino16"
