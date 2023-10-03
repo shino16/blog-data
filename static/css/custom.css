@@ -25,6 +25,8 @@ h3 {
   font-family: cursive, sans-serif;
 }
 
+.terms,
+.post .post-content .read-more .read-more-link,
 .post .post-toc {
   font-family: source sans pro,helvetica neue,Arial,sans-serif;
 }
