@@ -6,7 +6,7 @@ categories:
 tags:
 - "就活"
 images:
-- 'assets/pfn.jpg'
+- 'img/pfn.jpg'
 ---
 
 しの ([@shino1609](https://twitter.com/shino1609)) です。8月10日から9月29日まで、株式会社 Preferred Networks の夏季インターンシップに「CuPy の開発」というテーマで参加しました。
