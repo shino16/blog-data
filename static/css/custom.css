@@ -30,6 +30,7 @@ h3 {
   font-family: "Comic Sans MS","Comic Sans",cursive,sans-serif;
 }
 
+.mobile-menu .mobile-menu-list a,
 .header .site-navbar .menu {
   font-family: Microsoft Yahei,YakuHanJPs,"Segoe UI",Arial,Meiryo,sans-serif;
 }
