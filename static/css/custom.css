@@ -25,6 +25,7 @@ h3 {
   color: HighlightText;
 }
 
+.mobile-menu .mobile-menu-list a,
 .mobile-navbar .mobile-header-logo .logo,
 .header .logo-wrapper .logo {
   font-family: "Comic Sans MS","Comic Sans",cursive,sans-serif;
@@ -32,7 +33,7 @@ h3 {
 
 .mobile-menu .mobile-menu-list a,
 .header .site-navbar .menu {
-  font-family: Microsoft Yahei,YakuHanJPs,"Segoe UI",Arial,Meiryo,sans-serif;
+  font-family: Microsoft Yahei,Arial,sans-serif;
 }
 
 body,
@@ -41,7 +42,7 @@ body,
 .post .post-content .read-more .read-more-link,
 .post .post-footer,
 .post .post-toc {
-  font-family: YakuHanJPs,"Segoe UI",Arial,Meiryo,sans-serif;
+  font-family: Arial,sans-serif;
 }
 
 .post .post-header .post-title,
@@ -49,7 +50,7 @@ body,
 .post .post-content h2,
 .post .post-content h3,
 h1, h2, h3 {
-  font-family: YakuHanJPs,"Segoe UI",Arial,Meiryo,sans-serif;;
+  font-family: Arial,sans-serif;;
   font-weight: bold;
 }
 
