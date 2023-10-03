@@ -10,7 +10,7 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           submodules: recursive
       - name: Install Hugo
-        run: sudo snap install hugo --channel=extended
+        run: sudo snap install hugo --channel="0.110/extended"
       - name: Setup target directory
         run: |
           git config --global user.name "shino16-sub"
