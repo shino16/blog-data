@@ -1,5 +1,5 @@
 ---
-title: "My in PFN 2023 Summer Internship Experience"
+title: "My PFN 2023 Summer Internship Experience"
 date: 2023-10-17T15:00:00+01:00
 images:
 - 'img/pfn.jpg'
