@@ -79,7 +79,7 @@ $f\colon \mathbb{Z} \to \mathbb{R}$ が凸であることを示すには，$2f(x
 
 Aliens DP を適用するにあたってコストが Monge であることは必要ではありませんが，Monge $\implies$ 凸 は成立します．[参照](https://noshi91.github.io/algorithm-encyclopedia/d-edge-shortest-path-monge)
 
-**$f(k)$ ではなく $\min\{f(x): a \leq x \leq b\}$ を求めたい**
+**$f(k)$ ではなく $\min\\{f(x): a \leq x \leq b\\}$ を求めたい**
 
 別の [noshi91 さんの記事](https://noshi91.hatenablog.com/entry/2022/01/13/001217) を参照してください．
 
