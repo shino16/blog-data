@@ -7,7 +7,7 @@ tag:
 
 Aliens DP (the trick from Aliens) を解説します．
 
-定義や記号は [noshi91 さんの記事](https://noshi91.hatenablog.com/#fn-aeff7d60) に概ね準拠しています．Aliens DP の使い方はこの記事に書いてあることが全てなので，何をしたいかが分かればこの記事を見てください．
+定義や記号は [noshi91 さんの記事](https://noshi91.hatenablog.com/entry/2023/11/20/052227) に概ね準拠しています．Aliens DP の使い方はこの記事に書いてあることが全てなので，何をしたいかが分かればこの記事を見てください．
 
 ## 例
 
@@ -51,7 +51,7 @@ $(x_p^\*, f(x_p^\*))$（下図ピンク色の点）は傾き $p$ の接線との
 
 <iframe src="https://www.geogebra.org/calculator/kexxmzfs?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
-なお，$x_p^\*$ を $\operatorname{argmin}_x(f(x)-px)$ の中からどのように選ぶかを決めておくことや，二分探索の境界条件に関する注意が必要です．詳細は [noshi91 さんの記事](https://noshi91.hatenablog.com/#%E3%83%9A%E3%83%8A%E3%83%AB%E3%83%86%E3%82%A3%E5%9B%9E%E6%95%B0%E3%81%AE%E7%AE%A1%E7%90%86) を参照してください．
+なお，$x_p^\*$ を $\operatorname{argmin}_x(f(x)-px)$ の中からどのように選ぶかを決めておくことや，二分探索の境界条件に関する注意が必要です．詳細は [noshi91 さんの記事](https://noshi91.hatenablog.com/entry/2023/11/20/052227) を参照してください．
 
 ## 変種：$f^{-1}(k)$ を求める
 
@@ -61,7 +61,7 @@ $(x_p^\*, f(x_p^\*))$（下図ピンク色の点）は傾き $p$ の接線との
 
 ## 実装に関して
 
-[noshi91 さんの記事](https://noshi91.hatenablog.com/#fn-aeff7d60) を参照してください．
+[noshi91 さんの記事](https://noshi91.hatenablog.com/entry/2023/11/20/052227) を参照してください．
 
 $f$ の値が整数なら，$p$ も整数のものだけ考えればよいです．
 
